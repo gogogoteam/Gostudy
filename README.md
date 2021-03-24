@@ -91,11 +91,12 @@ All you have to do is to enter the subjects and credits you have for the semeste
 ## Schema 
 [This section will be completed in Unit 9]
 ### Models
-
+home
 | Property  | Type | Description | 
 | ------------- | ------------- | ------------- | 
 | objectId  | String  | unique id for the user post (default field)  |
-| userId  | String | Content Cell  |
+| userId  | String | content cell  |
+| username  | String | username for users to be identified  |
 
 ### Networking
 - [Add list of network requests by screen ]
