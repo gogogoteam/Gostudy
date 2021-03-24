@@ -82,7 +82,7 @@ All you have to do is to enter the subjects and credits you have for the semeste
 
 ## Wireframes
 [Add picture of your hand sketched wireframes in this section]
-<img src="https://github.com/gogogoteam/Gostudy/blob/main/GoStudy%20wireframes.jpg" width=600>
+<img src="https://github.com/gogogoteam/Gostudy/blob/main/wireframe%202.jpg" width=600>
 
 ### [BONUS] Digital Wireframes & Mockups
 
