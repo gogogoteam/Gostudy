@@ -97,7 +97,8 @@ user
 | objectId  | String  | unique id for the user post (default field)  |
 | userId  | String | content cell  |
 | username  | String | username for users to be identified  |
-| password | String | user's passwrod to sign into his or her account |
+| password | String | user's password to sign into his or her account |
+plans
 
 ### Networking
 - [Add list of network requests by screen ]
