@@ -114,3 +114,5 @@ All you have to do is to enter the subjects and credits you have for the semeste
 
 ### Networking
 - Home Screen
+   - (Read/GET)
+- 
