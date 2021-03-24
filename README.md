@@ -113,6 +113,4 @@ All you have to do is to enter the subjects and credits you have for the semeste
 | studySection | Int | how long the user wants to study for this course |
 
 ### Networking
-- [Add list of network requests by screen ]
-- [Create basic snippets for each Parse network request]
-- [OPTIONAL: List endpoints if using existing API such as Yelp]
+- Home Screen
