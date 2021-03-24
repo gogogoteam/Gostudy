@@ -91,14 +91,19 @@ All you have to do is to enter the subjects and credits you have for the semeste
 ## Schema 
 [This section will be completed in Unit 9]
 ### Models
-user
+# user
 | Property  | Type | Description | 
 | ------------- | ------------- | ------------- | 
 | objectId  | String  | unique id for the user post (default field)  |
 | userId  | String | content cell  |
 | username  | String | username for users to be identified  |
 | password | String | user's password to sign into his or her account |
-plans
+# plans
+| Property  | Type | Description | 
+| ------------- | ------------- | ------------- |
+| objectId| String | unique id for the user post (default field)  |
+| planName | String | unique name for a plan
+| user | Pointer => user.objectId | user who created the plan |
 
 ### Networking
 - [Add list of network requests by screen ]
