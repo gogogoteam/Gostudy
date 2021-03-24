@@ -101,9 +101,16 @@ All you have to do is to enter the subjects and credits you have for the semeste
 #### plans
 | Property  | Type | Description | 
 | ------------- | ------------- | ------------- |
-| objectId| String | unique id for the user post (default field)  |
+| objectId| String | unique id for the plan (default field)  |
 | planName | String | unique name for a plan
 | user | Pointer => user.objectId | user who created the plan |
+| preference | | |
+#### course
+| Property  | Type | Description | 
+| ------------- | ------------- | ------------- |
+| objectId| String | unique id for the course (default field)  |
+| courseName | String | a name to identify the course
+| credits | Int | the credit for each course |
 
 ### Networking
 - [Add list of network requests by screen ]
