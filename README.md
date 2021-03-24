@@ -114,5 +114,15 @@ All you have to do is to enter the subjects and credits you have for the semeste
 
 ### Networking
 - Home Screen
-   - (Read/GET)
-- 
+   - (Read/GET) Query all plans created by the user
+- View Plan Screen
+   - (Read/GET) Query all plan that is selected
+- Edit Plan Screen
+   - (Read/GET) Query all plan that is selected
+   - (Update/PUT) update the plan selected
+   - (Delete) delete the course of section selected
+- Personal Information Screen
+   - (Read/GET) get the userId for user
+   - (Read/GET) get the username for user
+- Create Plan Screen
+   - (Create/POST) create a new plan
