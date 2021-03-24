@@ -65,6 +65,7 @@ All you have to do is to enter the subjects and credits you have for the semeste
 * [home screen]
 * [share platform]
 * [personal information]
+* [add plan]
 
 **Flow Navigation** (Screen to Screen)
 
