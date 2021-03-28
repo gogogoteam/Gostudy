@@ -108,6 +108,7 @@ All you have to do is to enter the subjects and credits you have for the semeste
 | courseName | String | a name to identify the course
 | credits | Int | the amount of credits for each course |
 | studySection | Int | how long the user wants to study for this course |
+|plan | pointer => plans.objectId | the plan of this course |
 
 ### Networking
 - Home Screen
