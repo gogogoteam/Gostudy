@@ -25,6 +25,33 @@ All you have to do is to enter the subjects and credits you have for the semeste
 
 **Required Must-have Stories**
 - [X] has a parse data base created
+   Model: user
+   - [x] objectId
+   - [x] userId
+   - [x] username
+   - [x] password
+
+   Model: plans
+   - [x] objectId
+   - [x] planName
+   - [x] user
+
+   Model: course
+   - [x] objectId
+   - [x] courseaName
+   - [x] credit
+   - [x] studySection
+
+- [ ] has a login and signup screen
+   login screen
+
+   - [ ] user can enter user name and pass word to sign in
+   - [ ] user can click on the sign up button to navigate to the sign up screen
+
+   sign up screen
+
+   - [ ] user can sign up 
+
 - [ ] allows users to create their study plan
 - [ ] students can upload their plan to google calendar
 
