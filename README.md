@@ -24,14 +24,14 @@ All you have to do is to enter the subjects and credits you have for the semeste
 ### 1. User Stories (Required and Optional)
 
 **Required Must-have Stories**
-[X] has a parse data base created
-[ ] allows users to create their study plan
-[ ] students can upload their plan to google calendar
+- [X] has a parse data base created
+- [ ] allows users to create their study plan
+- [ ] students can upload their plan to google calendar
 
 **Optional Nice-to-have Stories**
 
-[ ] the app creates multiple plans for the user to choose from
-[ ] a platform to share people's study plan
+- [ ] the app creates multiple plans for the user to choose from
+- [ ] a platform to share people's study plan
 
 ### 2. Screen Archetypes
 
