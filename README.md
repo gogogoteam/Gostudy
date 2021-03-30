@@ -31,29 +31,68 @@ All you have to do is to enter the subjects and credits you have for the semeste
    - [x] username
    - [x] password
 
-   Model: plans
+   - Model: plans
    - [x] objectId
    - [x] planName
    - [x] user
 
-   Model: course
+   - Model: course
    - [x] objectId
    - [x] courseaName
    - [x] credit
    - [x] studySection
 
 - [ ] has a login and signup screen
-   login screen
-
+   - login screen
    - [ ] user can enter user name and pass word to sign in
    - [ ] user can click on the sign up button to navigate to the sign up screen
-
-   sign up screen
-
+   - sign up screen
    - [ ] user can sign up 
 
-- [ ] allows users to create their study plan
-- [ ] students can upload their plan to google calendar
+- [ ] has a tab that navigates to different screens
+   - [ ] the bottom should show in the order of: home screen, create plan, share platform, personal information 
+   - [ ] each tab should be able to navigate to the correct screen
+
+- [ ] detail about home screen
+   - [ ] should show all plans in a recycle view 
+   - [ ] show "no plans if there is none
+   - [ ] should be able to navigate to the read plan screen
+   - [ ] the read plan screen should show the plan selected by a calendar view
+   - [ ] the read plan screen should navigate to the edit screen
+
+- [ ] detail about the edit scrren from home screen
+   - [ ] user can click on a time slot to change the information
+     - [ ] change the length of the section
+     - [ ] change the time and day of the section
+
+   - [ ] user can delete any time slot
+   - [ ] user can save the updated plan and return to the view screen
+
+
+- [ ] detail about the plan screen: allows users to create their study plan
+   - [ ] user is asked to enter their class schedule 
+     - [ ] class
+     - [ ] credit
+     - [ ] time
+
+   - [ ] users are asked about their study preference 
+     - [ ] when do they want to study 
+     - [ ] how long do they want to study for a subject
+
+   - [ ] generate the plan according to the questions above
+   - [ ] user can preview their plan
+   - [ ] user saves their plan 
+   - [ ] navigate to the home screen once finished creating 
+
+- [ ] detail about personal information screen
+   - [ ] display user ID
+   - [ ] display user name
+   - [ ] should have a button that navigates to the login screen(logout)
+   - [ ] (optional) user can change their user name and password
+   - [ ] (optional) user can upload their photos and show it in the screen
+
+- [ ] stretch features
+   - [ ] students can upload their plan to google calendar
 
 **Optional Nice-to-have Stories**
 
