@@ -42,12 +42,9 @@ All you have to do is to enter the subjects and credits you have for the semeste
    - [x] credit
    - [x] studySection
 
-- [ ] has a login and signup screen
-   - login screen
-   - [ ] user can enter user name and pass word to sign in
-   - [ ] user can click on the sign up button to navigate to the sign up screen
-   - sign up screen
-   - [ ] user can sign up 
+- [x] has a login and signup screen
+   - [x] user can enter user name and password to sign in or signup
+   - [x] after successful sign in or sign up, user is navigated to home screen
 
 - [ ] has a tab that navigates to different screens
    - [ ] the bottom should show in the order of: home screen, create plan, share platform, personal information 
