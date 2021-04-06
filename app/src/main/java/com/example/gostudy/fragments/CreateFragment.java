@@ -139,8 +139,7 @@ public class CreateFragment extends Fragment {
                         }
                     });
                 }
-                // create Course for each objects
-                // go home screen? preview?
+                
             }
         });
     }
