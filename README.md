@@ -144,6 +144,13 @@ All you have to do is to enter the subjects and credits you have for the semeste
 [Add picture of your hand sketched wireframes in this section]
 <img src="https://github.com/gogogoteam/Gostudy/blob/main/wireframe%202.jpg" width=600>
 
+## Walkthrough Video
+Here's a walkthrough of implemented user stories:
+
+<img src='https://github.com/gogogoteam/Gostudy/blob/main/gostudy%20part1.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
+GIF created with [LiceCap](http://www.cockos.com/licecap/).
+
 ### [BONUS] Digital Wireframes & Mockups
 
 ### [BONUS] Interactive Prototype
