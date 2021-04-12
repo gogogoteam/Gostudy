@@ -41,7 +41,7 @@ public class ViewPlanActivity extends AppCompatActivity {
         btnEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(context, MainActivity.class);
+                Intent i = new Intent(this, MainActivity.class);
                 startActivity(i);
             }
         });
