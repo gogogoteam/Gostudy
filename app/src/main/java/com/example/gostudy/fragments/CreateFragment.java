@@ -1,5 +1,6 @@
 package com.example.gostudy.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -18,6 +19,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.gostudy.R;
+import com.example.gostudy.ViewPlanActivity;
 import com.example.gostudy.adapters.CourseAdapter;
 import com.example.gostudy.models.Course;
 import com.example.gostudy.models.LocalCourse;
@@ -138,6 +140,11 @@ public class CreateFragment extends Fragment {
 //                            courseAdapter.notifyDataSetChanged();
                         }
                     });
+
+
+                    Intent i = new Intent(getContext(), ViewPlanActivity.class);
+                    getContext().startActivity(i);
+
                 }
                 
             }
