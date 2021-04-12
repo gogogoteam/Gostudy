@@ -9,6 +9,7 @@ public class Course extends ParseObject {
     public static final String KEY_COURSE_NAME = "courseName";
     public static final String KEY_CREDIT = "credit";
     public static final String KEY_PLAN = "plan";
+    public static final String KEY_STUDIED_HOURS = "studiedHours";
 
 
     public String getCourseName() {
@@ -23,6 +24,10 @@ public class Course extends ParseObject {
         return getParseObject(KEY_PLAN);
     }
 
+    public String getStudiedHours() {
+        return getString(KEY_STUDIED_HOURS);
+    }
+
     public void setCourseName(String name) {
         put(KEY_COURSE_NAME, name);
     }
@@ -33,5 +38,9 @@ public class Course extends ParseObject {
 
     public void setPlan(ParseObject plan) {
         put(KEY_PLAN, plan);
+    }
+
+    public void setStudiedHours(Integer hours) {
+        put(KEY_STUDIED_HOURS, hours);
     }
 }

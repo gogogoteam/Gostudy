@@ -128,14 +128,14 @@ public class CreateFragment extends Fragment {
                                     }
                                 });
                             }
-                            Toast.makeText(getContext(), "Succeed!",Toast.LENGTH_SHORT).show();
-
-                            // set back to blank
-                            etPlanName.setText("");
-                            etCourseName.setText("");
-                            etCredits.setText("");
-                            courses.clear();
-                            courseAdapter.notifyDataSetChanged();
+//                            Toast.makeText(getContext(), "Succeed!",Toast.LENGTH_SHORT).show();
+//
+//                            // set back to blank
+//                            etPlanName.setText("");
+//                            etCourseName.setText("");
+//                            etCredits.setText("");
+//                            courses.clear();
+//                            courseAdapter.notifyDataSetChanged();
                         }
                     });
                 }

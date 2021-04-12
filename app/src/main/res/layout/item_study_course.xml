@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tvCourseName"
+        android:layout_width="120dp"
+        android:layout_height="30dp"
+        android:textAlignment="viewStart"
+        android:textSize="20sp"
+        tools:text="MATH141" />
+
+    <TextView
+        android:id="@+id/tvGoalHour"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_toEndOf="@+id/tvCourseName"
+        android:textSize="20sp"
+        tools:text="12" />
+
+    <TextView
+        android:id="@+id/tvHourPerWeek"
+        android:layout_width="120dp"
+        android:layout_height="30dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_toEndOf="@+id/tvGoalHour"
+        android:text="hours/week"
+        android:textSize="20sp" />
+
+    <ImageView
+        android:id="@+id/ivSubtract"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
+        android:layout_toEndOf="@+id/tvHourPerWeek"
+        app:srcCompat="@drawable/ic_baseline_expand_more_24" />
+
+    <TextView
+        android:id="@+id/tvHour"
+        android:layout_width="60dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        tools:text="0" />
+
+    <ImageView
+        android:id="@+id/ivAdd"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_toEndOf="@+id/tvHour"
+        app:srcCompat="@drawable/ic_baseline_expand_less_24" />
+
+</LinearLayout>
