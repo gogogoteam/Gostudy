@@ -119,6 +119,7 @@ public class CreateFragment extends Fragment {
                                 course.setCredits(localCourse.getCredits());
                                 course.setCourseName(localCourse.getName());
                                 course.setPlan(plan);
+                                course.setStudiedHours(0);
                                 course.saveInBackground(new SaveCallback() {
                                     @Override
                                     public void done(ParseException e) {
@@ -132,12 +133,12 @@ public class CreateFragment extends Fragment {
                             }
 //                            Toast.makeText(getContext(), "Succeed!",Toast.LENGTH_SHORT).show();
 //
-//                            // set back to blank
-//                            etPlanName.setText("");
-//                            etCourseName.setText("");
-//                            etCredits.setText("");
-//                            courses.clear();
-//                            courseAdapter.notifyDataSetChanged();
+                            // set back to blank
+                            etPlanName.setText("");
+                            etCourseName.setText("");
+                            etCredits.setText("");
+                            courses.clear();
+                            courseAdapter.notifyDataSetChanged();
                         }
                     });
 

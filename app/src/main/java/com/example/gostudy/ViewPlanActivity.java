@@ -40,6 +40,8 @@ public class ViewPlanActivity extends AppCompatActivity {
         rvPlan = findViewById(R.id.rvPlan);
 
         CreatePlanAdapter createPlanAdapter = new CreatePlanAdapter(this, courses);
+        rvPlan.setAdapter(createPlanAdapter);
+        rvPlan.setLayoutManager(new LinearLayoutManager(this));
 
         btnExit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,12 +59,6 @@ public class ViewPlanActivity extends AppCompatActivity {
                 Toast.makeText(context, "this button is still unfinished", Toast.LENGTH_SHORT).show();
             }
         });
-
-        CreatePlanAdapter courseAdapter =new CreatePlanAdapter(this, courses);
-        rvPlan.setAdapter(courseAdapter);
-        rvPlan.setLayoutManager(new LinearLayoutManager(this));
-
-
 
 
     }
