@@ -43,7 +43,7 @@ public class CreatePlanViewHolder extends RecyclerView.ViewHolder{
         return tvHour;
     }
 
-    public void settvHour( String addOrSub) {
+    public void settvHour(String addOrSub) {
         if (addOrSub ==  "add"){
             tvHour.setText(Integer.parseInt(tvHour.getText().toString()) + 1);
         }
