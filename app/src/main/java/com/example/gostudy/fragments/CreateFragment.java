@@ -147,7 +147,8 @@ public class CreateFragment extends Fragment {
                     getContext().startActivity(i);
 
                 }
-                
+                // create Course for each objects
+                // go home screen? preview?
             }
         });
     }
