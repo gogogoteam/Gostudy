@@ -18,6 +18,7 @@ import com.example.gostudy.adapters.CourseAdapter;
 import com.example.gostudy.adapters.CreatePlanAdapter;
 import com.example.gostudy.models.Course;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static java.security.AccessController.getContext;
@@ -39,7 +40,7 @@ public class ViewPlanActivity extends AppCompatActivity {
         btnExit = findViewById(R.id.btnExit);
         rvPlan = findViewById(R.id.rvPlan);
 
-        CreatePlanAdapter createPlanAdapter = new CreatePlanAdapter(this, courses);
+        context = ViewPlanActivity.this;
 
         btnExit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,16 +53,16 @@ public class ViewPlanActivity extends AppCompatActivity {
         btnEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Intent i = new Intent(context, MainActivity.class);
-//                startActivity(i);
+                Intent i = new Intent(context, MainActivity.class);
+                startActivity(i);
                 Toast.makeText(context, "this button is still unfinished", Toast.LENGTH_SHORT).show();
             }
         });
 
-        CreatePlanAdapter courseAdapter =new CreatePlanAdapter(this, courses);
-        rvPlan.setAdapter(courseAdapter);
+        courses = new ArrayList<>();
+        CreatePlanAdapter createPlanAdapter = new CreatePlanAdapter(this, courses);
+        rvPlan.setAdapter(createPlanAdapter);
         rvPlan.setLayoutManager(new LinearLayoutManager(this));
-
 
 
 
