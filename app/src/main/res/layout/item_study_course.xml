@@ -47,15 +47,13 @@
         android:layout_toEndOf="@+id/tvHourPerWeek"
         app:srcCompat="@drawable/ic_baseline_expand_more_24" />
 
-    <TextView
-        android:id="@+id/tvHour"
-        android:layout_width="60dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="0dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        tools:text="0" />
+    <EditText
+        android:id="@+id/etHour"
+        android:layout_width="30dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        android:text="0" />
 
     <ImageView
         android:id="@+id/ivAdd"

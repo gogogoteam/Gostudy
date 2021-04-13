@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -38,11 +39,22 @@ public class ViewPlanActivity extends AppCompatActivity {
         btnExit = findViewById(R.id.btnExit);
         rvPlan = findViewById(R.id.rvPlan);
 
+        CreatePlanAdapter createPlanAdapter = new CreatePlanAdapter(this, courses);
+
+        btnExit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(context, MainActivity.class);
+                startActivity(i);
+            }
+        });
+
         btnEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(this, MainActivity.class);
-                startActivity(i);
+//                Intent i = new Intent(context, MainActivity.class);
+//                startActivity(i);
+                Toast.makeText(context, "this button is still unfinished", Toast.LENGTH_SHORT).show();
             }
         });
 

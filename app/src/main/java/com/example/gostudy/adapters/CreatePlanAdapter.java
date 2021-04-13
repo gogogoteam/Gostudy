@@ -35,7 +35,7 @@ public class CreatePlanAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater=LayoutInflater.from(parent.getContext());
         View view = inflater.inflate(R.layout.item_study_course, parent, false);
-        RecyclerView.ViewHolder viewHolder = new CourseViewHolder(view);
+        RecyclerView.ViewHolder viewHolder = new CreatePlanViewHolder(view);
         return viewHolder;
     }
 
@@ -43,14 +43,23 @@ public class CreatePlanAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         CreatePlanViewHolder viewHolder = (CreatePlanViewHolder) holder;
         configureViewHolder(viewHolder, position);
-        //ImageView ivCancel = viewHolder.getIvCancel();
-//        ivCancel.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                courses.remove(position);
-//                notifyDataSetChanged();
-//            }
-//        });
+        ImageView ivAdd = viewHolder.getivAdd();
+        ImageView ivSubtract = viewHolder.getivSubtract();
+        ivAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                viewHolder.settvHour("add");
+                notifyDataSetChanged();
+            }
+        });
+
+        ivSubtract.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                viewHolder.settvHour("sub");
+                notifyDataSetChanged();
+            }
+        });
     }
 
     @Override
@@ -59,6 +68,7 @@ public class CreatePlanAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
     }
 
     private void configureViewHolder(CreatePlanViewHolder viewHolder, int position) {
+        //TODO: finish the adaptor
         //viewHolder.gettvCourseName().setText(courses.get(position).getName());
     }
 }
