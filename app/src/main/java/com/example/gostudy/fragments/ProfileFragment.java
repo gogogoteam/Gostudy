@@ -33,7 +33,9 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.example.gostudy.LoginActivity;
 import com.example.gostudy.MainActivity;
+import com.example.gostudy.ManageAccountActivity;
 import com.example.gostudy.R;
+import com.example.gostudy.ViewPlanActivity;
 import com.parse.ParseException;
 import com.parse.ParseFile;
 import com.parse.ParseUser;
@@ -54,10 +56,11 @@ public class ProfileFragment extends Fragment {
 
     private TextView tvUsername, tvUserId, tvUserDescription;
     private ImageView ivAvatar, ivBackground;
-    private Button btnLogout;
+    private Button btnLogout, btnManageAccount;
     public static final String TAG = "ProfileFragment";
     public static final int FROM_GALLERY = 20;
     public static final int FROM_CAMERA = 21;
+    public static final int MANAGE_ACCOUNT = 30;
     public static final int CAMERA_PERMISSION = 1;
 
     private File photoFile;
@@ -87,6 +90,7 @@ public class ProfileFragment extends Fragment {
         ivAvatar=view.findViewById(R.id.ivAvatar);
         ivBackground=view.findViewById(R.id.ivBackground);
         btnLogout=view.findViewById(R.id.btnLogout);
+        btnManageAccount=view.findViewById(R.id.btnManageAccount);
 
         context = getContext();
 
@@ -98,19 +102,14 @@ public class ProfileFragment extends Fragment {
         });
 
         // request and set personal info
-        ParseUser parseUser = ParseUser.getCurrentUser();
-        if (parseUser != null) {
-            tvUsername.setText(parseUser.getUsername());
-            tvUserId.setText(parseUser.getObjectId());
-            tvUserDescription.setText("");
-
-            ParseFile profileImage = parseUser.getParseFile("profileImage");
-            if (profileImage != null) {
-                Glide.with(context).load(profileImage.getUrl()).into(ivAvatar);
-            } else {
-                Log.i(TAG,"no profile image");
+        setPersonalInfo();
+        btnManageAccount.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getContext(), ManageAccountActivity.class);
+                startActivityForResult(i, MANAGE_ACCOUNT);
             }
-        }
+        });
 
         ivAvatar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -155,9 +154,27 @@ public class ProfileFragment extends Fragment {
 
     }
 
+    private void setPersonalInfo() {
+        ParseUser parseUser = ParseUser.getCurrentUser();
+        if (parseUser != null) {
+            tvUsername.setText(parseUser.getUsername());
+            tvUserId.setText("id: "+parseUser.getObjectId());
+            tvUserDescription.setText("");
+
+            ParseFile profileImage = parseUser.getParseFile("profileImage");
+            if (profileImage != null) {
+                Glide.with(context).load(profileImage.getUrl()).into(ivAvatar);
+            } else {
+                Log.i(TAG,"no profile image");
+            }
+        }
+
+    }
+
     @Override
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+        Log.i(TAG,"onActivityResult");
         switch (requestCode) {
             case FROM_CAMERA:
                 if(resultCode == RESULT_OK) {
@@ -184,6 +201,12 @@ public class ProfileFragment extends Fragment {
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
+                }
+                break;
+            case MANAGE_ACCOUNT:
+                if(resultCode == RESULT_OK) {
+                    setPersonalInfo();
+                    Log.i(TAG, "back from manage account activity.");
                 }
                 break;
         }
@@ -266,4 +289,5 @@ public class ProfileFragment extends Fragment {
             return Bitmap.createBitmap(bitmap,0,(height-width)/2,width,width);
         }
     }
+
 }
