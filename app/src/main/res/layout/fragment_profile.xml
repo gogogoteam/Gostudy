@@ -69,5 +69,14 @@
             android:src="@drawable/ic_baseline_person_24"
             android:background="@color/white"
             android:layout_centerHorizontal="true"/>
+
+        <Button
+            android:id="@+id/btnManageAccount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/btnLogout"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="8dp"
+            android:text="Manage Account" />
     </RelativeLayout>
 </FrameLayout>

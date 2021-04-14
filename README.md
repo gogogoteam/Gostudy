@@ -66,27 +66,26 @@ All you have to do is to enter the subjects and credits you have for the semeste
    - [ ] user can save the updated plan and return to the view screen
 
 
-- [ ] detail about the plan screen: allows users to create their study plan
-   - [ ] user is asked to enter their class schedule 
-     - [ ] class
-     - [ ] credit
-     - [ ] time
+- [X] detail about the plan screen: allows users to create their study plan
+   - [X] user is asked to enter their class schedule 
+     - [X] class
+     - [X] credit
 
-   - [ ] users are asked about their study preference 
+   - [ ] (optional)users are asked about their study preference 
      - [ ] when do they want to study 
      - [ ] how long do they want to study for a subject
 
    - [ ] generate the plan according to the questions above
    - [ ] user can preview their plan
    - [ ] user saves their plan 
-   - [ ] navigate to the home screen once finished creating 
+   - [X] navigate to the home screen by the exit button
 
 - [X] detail about personal information screen
    - [X] display user ID
    - [X] display user name
    - [X] should have a button that navigates to the login screen(logout)
-   - [ ] (optional) user can change their user name and password
-   - [ ] (optional) user can upload their photos and show it in the screen
+   - [x] (optional) user can change their user name and password
+   - [x] (optional) user can upload their photos and show it in the screen
 
 - [ ] stretch features
    - [ ] students can upload their plan to google calendar
@@ -147,7 +146,7 @@ All you have to do is to enter the subjects and credits you have for the semeste
 ## Walkthrough Video
 Here's a walkthrough of implemented user stories:
 
-<img src='https://github.com/gogogoteam/Gostudy/blob/main/gostudy%20part1.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://github.com/gogogoteam/Gostudy/blob/main/gostudy%20part3.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
