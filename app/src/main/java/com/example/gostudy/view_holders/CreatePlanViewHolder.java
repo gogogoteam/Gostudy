@@ -1,10 +1,10 @@
 package com.example.gostudy.view_holders;
 
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -13,56 +13,57 @@ import com.example.gostudy.R;
 
 public class CreatePlanViewHolder extends RecyclerView.ViewHolder{
 
-    TextView tvCourseName, tvGoalHour, tvHour;
-    RelativeLayout container;
-    ImageView ivAdd, ivSubtract;
+    static EditText etHour, etGoalHour;
+    static TextView tvCourseName;
+    static RelativeLayout container;
+    static ImageView ivAdd, ivSubtract;
+    static TextView tvHourPerWeek;
 
     public CreatePlanViewHolder(@NonNull View itemView) {
         super(itemView);
         tvCourseName = itemView.findViewById(R.id.tvCourseName);
-        tvGoalHour = itemView.findViewById(R.id.tvGoalHour);
-        tvHour = itemView.findViewById(R.id.tvHour);
+        etGoalHour = itemView.findViewById(R.id.etGoalHour);
+        etHour = itemView.findViewById(R.id.etHour);
         container = itemView.findViewById(R.id.container);
         ivAdd = itemView.findViewById(R.id.ivAdd);
         ivSubtract = itemView.findViewById(R.id.ivSubtract);
+        tvHourPerWeek = itemView.findViewById(R.id.tvHourPerWeek);
     }
 
     public RelativeLayout getContainer() {
         return container;
     }
 
-    public TextView gettvCourseName() {
+    public static TextView gettvCourseName() {
         return tvCourseName;
     }
 
-    public TextView gettvGoalHour() {
-        return tvGoalHour;
+    public static TextView getetGoalHour() {
+        return etGoalHour;
     }
 
-    public TextView gettvHour() {
-        return tvHour;
+    public static EditText setetGoalHour(int credit){
+        etGoalHour.setText(credit * 3);
+        return (EditText) getetGoalHour();
     }
 
-    public void settvHour(String addOrSub) {
-        if (addOrSub ==  "add"){
-            tvHour.setText(Integer.parseInt(tvHour.getText().toString()) + 1);
-        }
-        else if(addOrSub ==  "sub"){
-            if (Integer.parseInt(tvHour.getText().toString()) == 0){
-                return;
-            }
-            else{
-                tvHour.setText(Integer.parseInt(tvHour.getText().toString()) - 1);
-            }
-        }
-
+    public static TextView gettvHourPerWeek(){
+        return tvHourPerWeek;
     }
 
-    public ImageView getivAdd() {
+    public static EditText getetHour() {
+        return etHour;
+    }
+
+    public static void setetHour(int hour) {
+        etHour.setText(hour);
+    }
+
+    public static ImageView getivAdd() {
         return ivAdd;
     }
 
-    public ImageView getivSubtract() {
+    public static ImageView getivSubtract() {
         return ivSubtract;
     }
 

@@ -8,20 +8,29 @@
     android:orientation="vertical"
     tools:context=".ViewPlanActivity">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvPlan"
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/swipeContainer"
         android:layout_width="match_parent"
-        android:layout_height="500dp" />
+        android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/btnEdit"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Edit My Plan" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvPlan"
+            android:layout_width="match_parent"
+            android:layout_height="500dp" />
 
-    <Button
-        android:id="@+id/btnExit"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Exit Plan" />
+        <Button
+            android:id="@+id/btnEdit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Edit My Plan" />
+
+        <Button
+            android:id="@+id/btnExit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Exit Plan" />
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
 </LinearLayout>

@@ -14,15 +14,13 @@
         android:textSize="20sp"
         tools:text="MATH141" />
 
-    <TextView
-        android:id="@+id/tvGoalHour"
+    <EditText
+        android:id="@+id/etGoalHour"
         android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="0dp"
-        android:layout_toEndOf="@+id/tvCourseName"
-        android:textSize="20sp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:ems="10"
+        android:inputType="number"
         tools:text="12" />
 
     <TextView
