@@ -85,7 +85,7 @@ All you have to do is to enter the subjects and credits you have for the semeste
    - [X] display user name
    - [X] should have a button that navigates to the login screen(logout)
    - [ ] (optional) user can change their user name and password
-   - [ ] (optional) user can upload their photos and show it in the screen
+   - [x] (optional) user can upload their photos and show it in the screen
 
 - [ ] stretch features
    - [ ] students can upload their plan to google calendar
