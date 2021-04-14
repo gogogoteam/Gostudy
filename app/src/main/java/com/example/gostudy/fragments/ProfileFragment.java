@@ -30,13 +30,20 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.example.gostudy.LoginActivity;
 import com.example.gostudy.MainActivity;
 import com.example.gostudy.R;
+import com.parse.ParseException;
+import com.parse.ParseFile;
 import com.parse.ParseUser;
+import com.parse.SaveCallback;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 
 import static android.app.Activity.RESULT_OK;
 
@@ -97,7 +104,12 @@ public class ProfileFragment extends Fragment {
             tvUserId.setText(parseUser.getObjectId());
             tvUserDescription.setText("");
 
-            // TODO: initiate the profile photo
+            ParseFile profileImage = parseUser.getParseFile("profileImage");
+            if (profileImage != null) {
+                Glide.with(context).load(profileImage.getUrl()).into(ivAvatar);
+            } else {
+                Log.i(TAG,"no profile image");
+            }
         }
 
         ivAvatar.setOnClickListener(new View.OnClickListener() {
@@ -155,6 +167,8 @@ public class ProfileFragment extends Fragment {
                         setProfilePhoto();
                     } catch (FileNotFoundException e) {
                         e.printStackTrace();
+                    } catch (IOException e) {
+                        e.printStackTrace();
                     }
 
                 }
@@ -167,18 +181,41 @@ public class ProfileFragment extends Fragment {
                         setProfilePhoto();
                     } catch (FileNotFoundException e) {
                         e.printStackTrace();
+                    } catch (IOException e) {
+                        e.printStackTrace();
                     }
                 }
                 break;
         }
     }
 
-    private void setProfilePhoto() throws FileNotFoundException {
+    private void setProfilePhoto() throws IOException {
         // locally set the profile photo
         Bitmap bitmap =BitmapFactory.decodeStream(context.getContentResolver().openInputStream(imageUri));
-        ivAvatar.setImageBitmap(toSquareBitmap(bitmap));
+        ByteArrayOutputStream bytes = new ByteArrayOutputStream();
+        Bitmap resizedBitmap = toSquareBitmap(bitmap);
+        ivAvatar.setImageBitmap(resizedBitmap);
+        resizedBitmap.compress(Bitmap.CompressFormat.JPEG, 40, bytes);
+        File resizedFile = getPhotoFileUri(photoFileName + "_resized");
+        FileOutputStream fos = new FileOutputStream(resizedFile);
+        resizedFile.createNewFile();
+        fos.write(bytes.toByteArray());
+        fos.close();
+        Log.i(TAG,"file saved complete! "+resizedFile.toString());
 
-        // TODO: upload to parse
+        ParseUser user = ParseUser.getCurrentUser();
+        user.put("profileImage",new ParseFile(resizedFile));
+        user.saveInBackground(new SaveCallback() {
+            @Override
+            public void done(ParseException e) {
+                if(e!=null) {
+                    Log.e(TAG, "Error while saving",e);
+                    Toast.makeText(getContext(), "Error while saving!",Toast.LENGTH_SHORT).show();
+                }
+                Log.i(TAG,"Profile photo save was successful!");
+            }
+        });
+
     }
 
     @Override
