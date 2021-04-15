@@ -32,8 +32,6 @@ public class CreatePlanAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
     }
 
 
-
-
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -51,7 +49,7 @@ public class CreatePlanAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         //below added on 4/14
         Course course = courses.get(position);
-        holder.bind(course);
+        //holder.bind(course);
         //above added on 4/14
 //        CreatePlanViewHolder viewHolder = (CreatePlanViewHolder) holder;
 //        configureViewHolder(viewHolder, position);

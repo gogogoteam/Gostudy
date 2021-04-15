@@ -62,6 +62,9 @@ public class LoginActivity extends AppCompatActivity {
         ParseUser user = new ParseUser();
         user.setUsername(username);
         user.setPassword(password);
+
+        //user.put("userId",username+"123");
+
         user.signUpInBackground(new SignUpCallback() {
             @Override
             public void done(ParseException e) {
