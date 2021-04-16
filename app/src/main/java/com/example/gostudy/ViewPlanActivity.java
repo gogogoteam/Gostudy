@@ -110,16 +110,18 @@ public class ViewPlanActivity extends AppCompatActivity {
         query.include(Course.KEY_PLAN);
         query.findInBackground(new FindCallback<Course>() {
             @Override
-            public void done(List<Course> courses, ParseException e) {
+            public void done(List<Course> allCourses, ParseException e) {
                 if (e != null){
                     Log.e(TAG, "Issue with getting courses", e);
                     return;
                 }
+
+                courses.addAll(allCourses);
+                adapter.notifyDataSetChanged();
+
                 for (Course course : courses){
                     Log.i(TAG, "Course: " + course.getCourseName() + ", credit: " + course.getCredits());
                 }
-                courses.addAll(courses);
-                adapter.notifyDataSetChanged();
 
                 swipeContainer.setRefreshing(false);
             }
