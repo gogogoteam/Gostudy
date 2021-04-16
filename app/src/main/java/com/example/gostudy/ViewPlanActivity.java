@@ -41,7 +41,7 @@ public class ViewPlanActivity extends AppCompatActivity {
     public TextView tvHourPerWeek;
 
     public static final String TAG = "ViewPlanActivity";
-    protected CreatePlanAdapter adapter;
+    CreatePlanAdapter adapter;
     private SwipeRefreshLayout swipeContainer;
 
     @Override
@@ -78,9 +78,9 @@ public class ViewPlanActivity extends AppCompatActivity {
         courses = new ArrayList<>();
         adapter = new CreatePlanAdapter(this, courses);
 
+        rvPlan.setAdapter(adapter);
         // 4. set the layout manger on the recycler view
         rvPlan.setLayoutManager(new LinearLayoutManager(this));
-        rvPlan.setAdapter(adapter);
         queryCourses();
 
         swipeContainer = (SwipeRefreshLayout)findViewById(R.id.swipeContainer);
