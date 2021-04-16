@@ -75,7 +75,7 @@ public class CreatePlanAdapter extends RecyclerView.Adapter<CreatePlanAdapter.Vi
             etHour.setText(course.getStudiedHours());
             tvCourseName.setText(course.getCourseName());
 //            etGoalHour.setText(Integer.parseInt(course.getCredits()));
-            etGoalHour.setText(course.getCredits());
+            etGoalHour.setText(String.valueOf(course.getCredits()));
             tvHourPerWeek.setText("Hours/week");
 
             ivAdd.setOnClickListener(new View.OnClickListener() {
