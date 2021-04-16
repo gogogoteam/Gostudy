@@ -2,7 +2,6 @@ package com.example.gostudy.models;
 
 import com.parse.ParseClassName;
 import com.parse.ParseObject;
-import com.parse.ParsePlugins;
 
 @ParseClassName("course")
 public class Course extends ParseObject {
@@ -16,8 +15,8 @@ public class Course extends ParseObject {
         return getString(KEY_COURSE_NAME);
     }
 
-    public String getCredits() {
-        return getString(KEY_CREDIT);
+    public int getCredits() {
+        return getInt(KEY_CREDIT);
     }
 
     public ParseObject getPlan() {

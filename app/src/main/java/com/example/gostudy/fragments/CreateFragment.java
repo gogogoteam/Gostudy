@@ -82,7 +82,7 @@ public class CreateFragment extends Fragment {
                     Toast.makeText(getContext(), "Please enter the course name and credits!", Toast.LENGTH_SHORT).show();
                 }
                 else {
-                    LocalCourse localCourse = new LocalCourse(name, Float.valueOf(credits));
+                    LocalCourse localCourse = new LocalCourse(name, Integer.valueOf(credits));
                     courses.add(localCourse);
                     courseAdapter.notifyDataSetChanged();
                     etCourseName.setText("");
