@@ -18,7 +18,7 @@ import android.widget.TextView;
 import com.example.gostudy.MainActivity;
 import com.example.gostudy.R;
 import com.example.gostudy.ViewPlanActivity;
-import com.example.gostudy.adapters.PlanAdapter;
+//import com.example.gostudy.adapters.PlanAdapter;
 import com.example.gostudy.models.Plan;
 import com.parse.ParseUser;
 
@@ -40,26 +40,26 @@ public class HomeFragment extends Fragment {
     }
 
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false);
-    }
-
-    @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-        tvHomePlanName = view.findViewById(R.id.tvHomePlanName);
-        rvPlan = view.findViewById(R.id.rvPlan);
-        user = ParseUser.getCurrentUser();
-        plans = new ArrayList<>();
-
-        PlanAdapter planAdapter = new PlanAdapter(getContext(), plans);
-        rvPlan.setAdapter(planAdapter);
-
-
-    }
+//    @Override
+//    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+//                             Bundle savedInstanceState) {
+//        // Inflate the layout for this fragment
+//        return inflater.inflate(R.layout.fragment_home, container, false);
+//    }
+//
+//    @Override
+//    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+//        super.onViewCreated(view, savedInstanceState);
+//        tvHomePlanName = view.findViewById(R.id.tvHomePlanName);
+//        rvPlan = view.findViewById(R.id.rvPlan);
+//        user = ParseUser.getCurrentUser();
+//        plans = new ArrayList<>();
+//
+//        PlanAdapter planAdapter = new PlanAdapter(getContext(), plans);
+//        rvPlan.setAdapter(planAdapter);
+//
+//
+//    }
 
 
 }

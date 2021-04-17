@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.os.Parcelable;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -32,6 +33,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.zip.CheckedOutputStream;
 
+import org.parceler.Parcels;
+
 /**
  * A simple {@link Fragment} subclass.
  */
@@ -44,6 +47,7 @@ public class CreateFragment extends Fragment {
     private ImageView ivAddCourse;
     private RecyclerView rvCourses;
     private List<LocalCourse> courses;
+    public Plan plan;
 
     public CreateFragment() {
         // Required empty public constructor
@@ -102,7 +106,7 @@ public class CreateFragment extends Fragment {
                 if (planName.isEmpty()) {
                     Toast.makeText(getContext(), "Please enter the plan name!", Toast.LENGTH_SHORT).show();
                 } else {
-                    Plan plan = new Plan();
+                    plan = new Plan();
                     plan.setPlanName(planName);
                     plan.setUser(ParseUser.getCurrentUser());
                     plan.saveInBackground(new SaveCallback() {
@@ -144,6 +148,9 @@ public class CreateFragment extends Fragment {
 
 
                     Intent i = new Intent(getContext(), ViewPlanActivity.class);
+                    //delete line below if doesn't work
+                    i.putExtra("KEY_PLAN", Parcels.wrap(plan));
+
                     getContext().startActivity(i);
 
                 }

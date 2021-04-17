@@ -56,7 +56,7 @@ public class CreatePlanViewHolder extends RecyclerView.ViewHolder{
     }
 
     public static void setetHour(int hour) {
-        etHour.setText(hour);
+        etHour.setText(String.valueOf(hour));
     }
 
     public static ImageView getivAdd() {
