@@ -115,10 +115,10 @@ public class ViewPlanActivity extends AppCompatActivity {
     protected void queryCourses() {
         ParseQuery<Course> query = ParseQuery.getQuery(Course.class);
         query.include(Course.KEY_PLAN);
-        Log.i(TAG, "we've got here first!");
-        Plan plan = Parcels.unwrap(getIntent().getParcelableExtra("KEY_PLAN"));
-        query.whereEqualTo(Course.KEY_PLAN, plan);
-        Log.i(TAG, "we've got here!");
+//        Log.i(TAG, "we've got here first!");
+//        Plan plan = Parcels.unwrap(getIntent().getParcelableExtra("KEY_PLAN"));
+//        query.whereEqualTo(Course.KEY_PLAN, plan);
+//        Log.i(TAG, "we've got here!");
         query.findInBackground(new FindCallback<Course>() {
             @Override
             public void done(List<Course> allCourses, ParseException e) {

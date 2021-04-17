@@ -28,6 +28,7 @@ public class CreatePlanAdapter extends RecyclerView.Adapter<CreatePlanAdapter.Vi
     Context context;
     List<Course> courses;
 
+    public static final String TAG = "CreatePlanAdapter";
     public CreatePlanAdapter(Context context, List<Course> courses) {
         this.context = context;
         this.courses = courses;
@@ -71,16 +72,17 @@ public class CreatePlanAdapter extends RecyclerView.Adapter<CreatePlanAdapter.Vi
         }
 
         public void bind(Course course) {
-
-            etHour.setText(course.getStudiedHours());
+//course.getStudiedHours()
+            etHour.setText("0");
             tvCourseName.setText(course.getCourseName());
 //            etGoalHour.setText(Integer.parseInt(course.getCredits()));
-            etGoalHour.setText(String.valueOf(course.getCredits()));
+            etGoalHour.setText(String.valueOf(course.getCredits()*3));
             tvHourPerWeek.setText("Hours/week");
 
             ivAdd.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+//                    CreatePlanViewHolder.setetHour(Integer.parseInt(CreatePlanViewHolder.getetHour().getText().toString()) + 1);
                     CreatePlanViewHolder.setetHour(Integer.parseInt(CreatePlanViewHolder.getetHour().getText().toString()) + 1);
                     notifyDataSetChanged();
                 }
