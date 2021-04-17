@@ -7,6 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -21,7 +23,7 @@ import com.parse.ParseFile;
 
 import java.util.List;
 
-public class CreatePlanAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class CreatePlanAdapter extends RecyclerView.Adapter<CreatePlanAdapter.ViewHolder> {
 
     Context context;
     List<Course> courses;
@@ -31,31 +33,17 @@ public class CreatePlanAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
         this.courses = courses;
     }
 
-
     @NonNull
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-//        LayoutInflater inflater=LayoutInflater.from(parent.getContext());
-//        View view = inflater.inflate(R.layout.item_study_course, parent, false);
-//        RecyclerView.ViewHolder viewHolder = new CreatePlanViewHolder(view);
-//        return viewHolder;
-        // below created on 4/14
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context).inflate(R.layout.item_study_course, parent, false);
         return new ViewHolder(view);
-        //above created on 4/14
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-        //below added on 4/14
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Course course = courses.get(position);
-        //holder.bind(course);
-        //above added on 4/14
-//        CreatePlanViewHolder viewHolder = (CreatePlanViewHolder) holder;
-//        configureViewHolder(viewHolder, position);
-//        ImageView ivAdd = viewHolder.getivAdd();
-//        ImageView ivSubtract = viewHolder.getivSubtract();
-        
+        holder.bind(course);
     }
 
     @Override
@@ -63,15 +51,14 @@ public class CreatePlanAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
         return courses.size();
     }
 
-    // below added on 4/14
-    class ViewHolder extends RecyclerView.ViewHolder{
+    public class ViewHolder extends RecyclerView.ViewHolder{
 
-        public TextView tvCourseName;
-        public TextView etGoalHour;
-        public TextView tvHourPerWeek;
-        public ImageView ivAdd;
-        public ImageView ivSubtract;
-        public EditText etHour;
+        TextView tvCourseName;
+        TextView etGoalHour;
+        TextView tvHourPerWeek;
+        ImageView ivAdd;
+        ImageView ivSubtract;
+        EditText etHour;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -84,14 +71,12 @@ public class CreatePlanAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
         }
 
         public void bind(Course course) {
-            // Bind the post data to the view elements
-            ivAdd = CreatePlanViewHolder.getivAdd();
-            ivSubtract = CreatePlanViewHolder.getivSubtract();
-            CreatePlanViewHolder.setetHour(0);
-            etHour = CreatePlanViewHolder.getetHour();
-            tvCourseName = CreatePlanViewHolder.gettvCourseName();
-            etGoalHour = CreatePlanViewHolder.setetGoalHour(Integer.parseInt(course.getCredits()));
-            tvHourPerWeek = CreatePlanViewHolder.gettvHourPerWeek();
+
+            etHour.setText(course.getStudiedHours());
+            tvCourseName.setText(course.getCourseName());
+//            etGoalHour.setText(Integer.parseInt(course.getCredits()));
+            etGoalHour.setText(String.valueOf(course.getCredits()));
+            tvHourPerWeek.setText("Hours/week");
 
             ivAdd.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -112,13 +97,6 @@ public class CreatePlanAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
             });
         }
     }
-    //above added on 4/14
-
-
-//    private void configureViewHolder(CreatePlanViewHolder viewHolder, int position) {
-//        //TODO: finish the adaptor
-//        //viewHolder.gettvCourseName().setText(courses.get(position).getName());
-//    }
 }
 
 

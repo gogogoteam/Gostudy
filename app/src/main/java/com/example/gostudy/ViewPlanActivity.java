@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -35,15 +36,13 @@ public class ViewPlanActivity extends AppCompatActivity {
     private Button btnEdit, btnExit;
     private RecyclerView rvPlan;
     private List<Course> courses;
-    private TextView etGoalHour;
+    private EditText etGoalHour;
     public TextView tvCourseName;
     public TextView tvHourPerWeek;
 
-    //below added on 4/14
     public static final String TAG = "ViewPlanActivity";
-    protected CreatePlanAdapter adapter;
+    CreatePlanAdapter adapter;
     private SwipeRefreshLayout swipeContainer;
-    //above added on 4/14
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,12 +76,8 @@ public class ViewPlanActivity extends AppCompatActivity {
         });
 
         courses = new ArrayList<>();
-//        CreatePlanAdapter createPlanAdapter = new CreatePlanAdapter(this, courses);
-//        rvPlan.setAdapter(createPlanAdapter);
-//        rvPlan.setLayoutManager(new LinearLayoutManager(this));
-
-        //below added on 4/14
         adapter = new CreatePlanAdapter(this, courses);
+
         rvPlan.setAdapter(adapter);
         // 4. set the layout manger on the recycler view
         rvPlan.setLayoutManager(new LinearLayoutManager(this));
@@ -108,32 +103,28 @@ public class ViewPlanActivity extends AppCompatActivity {
                 android.R.color.holo_green_light,
                 android.R.color.holo_orange_light,
                 android.R.color.holo_red_light);
-
-        //above added on 4/14
-
-
-
-
     }
 
-    //below added on 4/14
     protected void queryCourses() {
         ParseQuery<Course> query = ParseQuery.getQuery(Course.class);
         query.include(Course.KEY_PLAN);
         query.findInBackground(new FindCallback<Course>() {
             @Override
-            public void done(List<Course> courses, ParseException e) {
+            public void done(List<Course> allCourses, ParseException e) {
                 if (e != null){
                     Log.e(TAG, "Issue with getting courses", e);
                     return;
                 }
+
+                courses.addAll(allCourses);
+                adapter.notifyDataSetChanged();
+
                 for (Course course : courses){
                     Log.i(TAG, "Course: " + course.getCourseName() + ", credit: " + course.getCredits());
                 }
-                courses.addAll(courses);
-                adapter.notifyDataSetChanged();
+
+                swipeContainer.setRefreshing(false);
             }
         });
     }
-    //above added on 4/14
 }
